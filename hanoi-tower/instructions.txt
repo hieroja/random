@@ -1,0 +1,67 @@
+TIE-0220x S2019 - Projekti: Hanoin torni
+
+Tekijä: Jere Liimatainen
+Sähköposti: jere.liimatainen@tuni.fi
+Opiskelijanumero: 285309
+
+Pelin säännöt:
+
+Kyseessä on yksinkertainen peli jossa erikokoisia kiekkoja siirrellään tornien välillä.
+Alku tilanteessa kaikki kiekot ovat vasemmanpuoleisessa tornissa suuruus järjestyksessä.
+Käyttäjä saa liikuttaa vain yhtä kiekkoa kerrallaan, lisäksi isompaa kiekkoa ei saa asettaa pienemmän päälle.
+Peli päättyy kun kaikki kiekot ovat oikeanpuoleisimmassa tornissa suuruusjärjestyksessä.
+
+Ohjelman ominaisuudet ja käyttöohjeet:
+
+ -  Ensin valitaan kiekkojen lukumäärä spinBoxia pyörittämällä tai arvo siihen suoraan syöttämällä (maksimissaan 70).
+    Maksimi arvo on määritetty ohjelman sisäisien vakioiden avulla. Kiekkojen korkeus, leveys ja leveys erot riippuvat
+    kiekkojen määrästä.
+ 
+ -  Painamalla "Start game" nappulaa, ohjelma luo halutun määrän kiekkoja vasemmanpuoleiseen tappiin, aloittaa
+    oikeassa yläkulmassa näkyvän ajastimen ja mahdollistaa kiekkojen liikuttamisen. Tämän jälkeen "Start game"-nappulaa
+    ja spinBox muuttuvat käyttökelvottomiksi.
+    
+-   Jokainen piirretty kiekko saa satunnaisen värin, lisäksi jokainen tolppa on värjätty eri väriseksi.
+
+ -  Kiekkojen liikuttaminen on toteutettu kahdella eri tavalla:
+        - Kiekkoja voi liikuttaa joko valitsemalla hiirellä mistä tolpasta "From peg" kiekko halutaan siirtää ja mihin tolppaan
+        "To peg". Valinta mahdollisuudet muuttuvat sen mukaan, mitkä ovat kullakin hetkellä sallittuja siirtoja. Tämän jälkeen
+        tulee painaa "Move" nappia, joka suorittaa halutun siirron. Myös "Move nappia on mahdotonta painaa, mikäli kyseessä
+        on laiton siirto.
+        - Toinen tapa liikutta kiekkoja on käyttää nappeja vastaavia näppäin komentoja. Näppäinkomennot on toteutettu seuraavasti:
+        "1" - > "From left peg"
+        "2" -> "From center peg"
+        "3" -> "From right peg"
+        
+        "8" -> "To left peg"
+        "9" -> "To center peg"
+        "0" -> "To right peg"
+        
+        "Spacebar" -> "Move"
+        
+        Myös näppäinkomentojen painaminen on estetty, mikäli nappuloiden painaminen on estetty.
+        
+-   Jokaisen suoritetun kiekon siirron jälkeen, Siirto kirjataan ylös siirtohistoriaan "Move history". Siirtohistoriassa siirrot on 
+    numeroitu. Lisäksi jokaisen siirron numeron vieressä on suluissa oleva numero. Tämä kertoo, kuinka monta siirtoa ollaan
+    jäljessä pienimmästä mahdollisesta siirtomäärästä kyseisellä kiekkojen määrällä. Mikäli luku on negatiivinen, 
+    pienen mahdollinen siirtomäärä on tämän verran suurempi kuin nykyinen siirtojen määrä, vastaavasti mikäli luku on positiivinen,
+    siiroja on tehty tämän verran enemmän kuin pienin mahdollinen määrä. Lisäksi mikäli siirtojen määrä minimissä on niin suuri tai
+    pieni, että siinä on useampi kuin 6 numeroa, siirtojen määrä näytetään kymmen potenssi muodossa.
+    
+-   Siirretty kiekko saa jokaisen siirron jälkeen uuden satunnaisen väri.
+    
+-   Siirtohistoria seuraavassa sarakkeessa on suoritettu siirto indeksi, jossa ensimmäinen luku kuvaa lähtötolppaa ja toinen kohde tolppaa.
+
+-   Lisäksi siirtohistoriassa on siirron suoritusaika.
+
+-   Kun peli on saatu päätökseen, ohjelma luo uuden inforuudun. Inforuudussa on tieto peliin kuluneesta ajasta, sekä siitä, onko
+    saatu aika paras suoritettu aika kyseisellä määrällä kiekkoja. Mikäli näin on, ohjelma ilmoittaa "New record time: ...", jossa
+    taas aika on hitaampi kuin nopein aika kyseisellä määrällä kiekkoja, ohjelma kertoo parhaan edellisen ajan kyseisellä määrällä
+    kiekkoja sekä äskeiseen peliin kuluneen ajan.
+    
+-   Ikkunaan on myös toteutettu vaihtoehto käynnistää peli uudestaan tai lopettaa peli.
+
+-   Valittaessa ikkunasta "Yes" kaikki aikaisemmat kiekot poistetaan ja peli palautetaan alkutilanteeseen.
+
+-   Useampi peli pelatteaessa ohjelma tallentaa paikalliseen muistiin kunkin kiekkomäärän kanssa saavutetut nopeimmat ajat.
+ 
